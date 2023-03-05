@@ -1,0 +1,17 @@
+{
+    "name": "ganesh/php-rest-api",
+    "autoload": {
+        "psr-4": {
+            "Ganesh\\PhpRestApi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ganesh Bhatta",
+            "email": "bhattaganesh05@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/dotenv": "^5.4"
+    }
+}
