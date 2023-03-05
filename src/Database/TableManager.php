@@ -1,14 +1,18 @@
 <?php
+
 namespace Ganesh\PhpRestApi\Database;
 
-class TableManager {
+class TableManager
+{
     private $db;
 
-    public function __construct($db) {
+    public function __construct($db)
+    {
         $this->db = $db;
     }
 
-    public function createTablesIfNotExist() {
+    public function createTablesIfNotExist()
+    {
         $tables = array(
             "users" => array(
                 "id" => "INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY",
@@ -26,10 +30,10 @@ class TableManager {
             foreach ($tableColumns as $columnName => $columnDefinition) {
                 $columns[] = "`" . $columnName . "` " . $columnDefinition;
             }
-            
+
             $sql .= implode(",", $columns);
             $sql .= ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;";
-            
+
             $this->db->query($sql);
         }
     }
